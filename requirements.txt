@@ -1,3 +1,5 @@
-django
-gunicorn
-django-heroku
+flask
+tensorflow
+keras
+numpy==1.19.3
+flask-cors

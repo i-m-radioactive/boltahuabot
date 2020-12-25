@@ -1,10 +1,9 @@
 {
-  "name": "Start on Heroku: Python",
-  "description": "A barebones Python app, which can easily be deployed to Heroku.",
+  "name": "Nameless",
+  "description": "A simple python deploy",
   "image": "heroku/python",
-  "repository": "https://github.com/heroku/python-getting-started",
-  "keywords": ["python", "django" ],
-  "addons": [ "heroku-postgresql" ],
+  "repository": "https://github.com/i-m-radioactive/boltahuabot",
+  "keywords": ["python", "flask" ],
   "env": {
     "SECRET_KEY": {
       "description": "The secret key for the Django application.",
@@ -14,8 +13,8 @@
   "environments": {
     "test": {
       "scripts": {
-        "test-setup": "python manage.py collectstatic --noinput",
-        "test": "python manage.py test"
+        "test-setup": "python chatbot.py",
+        "test": ""
       }
     }
   }
