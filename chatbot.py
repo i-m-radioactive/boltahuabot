@@ -4,12 +4,12 @@ import os
 from flask import request
 from flask import render_template
 from flask import send_file, send_from_directory
-from flask_cors import CORS
+
 
 app = flask.Flask(__name__, static_folder='./build/', static_url_path='/')
 app.config["DEBUG"] = True
 app.config["bot_files"] = "./"
-CORS(app)
+
 
 @app.route('/', methods=['GET'])
 def index():
