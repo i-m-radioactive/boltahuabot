@@ -1,16 +1,45 @@
-# Simple-Python-Chatbot
+# Python: Getting Started
 
-Creating a simple Python chatbot using natural language processing and deep learning.
+A barebones Django app, which can easily be deployed to Heroku.
 
-train_chatbot.py — the code for reading in the natural language data into a training set and using a Keras sequential neural network to create a model
+This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
 
+## Running Locally
 
-chatgui.py — the code for cleaning up the responses based on the predictions from the model and creating a graphical interface for interacting with the chatbot
+Make sure you have Python 3.7 [installed locally](http://install.python-guide.org). To push to Heroku, you'll need to install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), as well as [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
 
-classes.pkl — a list of different types of classes of responses
+```sh
+$ git clone https://github.com/heroku/python-getting-started.git
+$ cd python-getting-started
 
-words.pkl — a list of different words that could be used for pattern recognition
+$ python3 -m venv getting-started
+$ pip install -r requirements.txt
 
-intents.json — abunch of JavaScript objects that lists different tags that correspond to different types of word patterns
+$ createdb python_getting_started
 
-chatbot_model.h5 — the actual model created by train_chatbot.py and used by chatgui.py
+$ python manage.py migrate
+$ python manage.py collectstatic
+
+$ heroku local
+```
+
+Your app should now be running on [localhost:5000](http://localhost:5000/).
+
+## Deploying to Heroku
+
+```sh
+$ heroku create
+$ git push heroku main
+
+$ heroku run python manage.py migrate
+$ heroku open
+```
+or
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+## Documentation
+
+For more information about using Python on Heroku, see these Dev Center articles:
+
+- [Python on Heroku](https://devcenter.heroku.com/categories/python)
