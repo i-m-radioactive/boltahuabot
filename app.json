@@ -1,0 +1,21 @@
+{
+  "name": "Nameless",
+  "description": "A simple python deploy",
+  "image": "heroku/python",
+  "repository": "https://github.com/i-m-radioactive/boltahuabot",
+  "keywords": ["python", "flask" ],
+  "env": {
+    "SECRET_KEY": {
+      "description": "The secret key for the Django application.",
+      "generator": "secret"
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "python chatbot.py",
+        "test": ""
+      }
+    }
+  }
+}
